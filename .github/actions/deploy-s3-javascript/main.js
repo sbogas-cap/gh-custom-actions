@@ -9,7 +9,7 @@ function run() {
     const distFolder = core.getInput('dist-folder', { required: false });
 
     // 2) Upload files
-    const s3Uri = `s3://${buchet}`;
+    const s3Uri = `s3://${bucket}`;
     exec.exec(`echo ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 
     const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
